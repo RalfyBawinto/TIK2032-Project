@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ralfy Portfolio</title>
+    <link
+      rel="shortcut icon"
+      href="img/my-logo-nobg-copy.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="main-header">
+      <div class="main-container">
+        <div class="nav">
+          <div class="logo">
+            <a href="/main.html">RB</a>
+          </div>
+
+          <nav>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#gallery">Gallery</a></li>
+              <li><a href="#articles">Articles</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+
+          <div class="burger">
+            <div class="line-1"></div>
+            <div class="line-2"></div>
+            <div class="line-3"></div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- end header -->
+
+    <!-- hero -->
+    <section id="home">
+      <div class="home-text">
+        <h1>
+          Halo Semua 👋, saya <br /><span class="typing-text">Ralfy</span>
+        </h1>
+        <p>AND I'M AN INFORMATICS STUDENT</p>
+      </div>
+
+      <div class="home-img">
+        <div class="img-box">
+          <div class="img-item">
+            <img src="img/pp-removebg-preview.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end hero -->
+
+    <!-- about -->
+    <section id="about">
+      <h2>About <span>Me</span></h2>
+      <div>
+        <img src="img/me-remove-bg-io.png" alt="Foto Ralfy" />
+        <p>
+          Nama saya <strong>Ralfy Briggith Bawinto</strong>, seorang mahasiswa
+          semester 4 program studi Teknik Informatika di Universitas Sam
+          Ratulangi, angkatan 2023. Saya berasal dari Kabupaten Talaud (<i
+            >ana'u taroda</i
+          >), Sulawesi Utara. Saya memiliki ketertarikan yang mendalam terhadap
+          teknologi, terutama perkembangan dalam bidang Artificial Intelligence
+          (AI) dan Cyber Security. Dengan semangat belajar yang tinggi, saya
+          berharap dapat menjadi seorang problem solver di dunia pemrograman.
+        </p>
+      </div>
+    </section>
+    <!-- end about -->
+
+    <!-- gallery -->
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery-item">
+        <img
+          src="img/gallery/alan turing.jpeg"
+          alt="Alan Turing"
+          onclick="showModal('Alan Turing', 'Bapak Ilmu Komputer dan Kecerdasan Buatan. Dia menciptakan Mesin Turing dan memecahkan kode Enigma dalam Perang Dunia II.')"
+        />
+        <img
+          src="img/gallery/grace hooper.webp"
+          alt="Grace Hopper"
+          onclick="showModal('Grace Hopper', 'Seorang ilmuwan komputer dan laksamana Angkatan Laut AS yang berkontribusi dalam pengembangan COBOL.')"
+        />
+        <img
+          src="img/gallery/Tim-Berners-Lee-.jpg"
+          alt="Tim Berners-Lee"
+          onclick="showModal('Tim Berners-Lee', 'Penemu World Wide Web yang memungkinkan akses informasi secara global.')"
+        />
+        <img
+          src="img/gallery/Vint Cerf & Bob Kahn.jpg"
+          alt="Vint Cerf & Bob Kahn"
+          onclick="showModal('Vint Cerf & Bob Kahn', 'Dikenal sebagai Bapak Internet karena mengembangkan protokol TCP/IP.')"
+        />
+        <img
+          src="img/gallery/linustrovalds.jpg"
+          alt="Linus Torvalds"
+          onclick="showModal('Linus Torvalds', 'Pencipta kernel Linux yang menjadi dasar dari berbagai sistem operasi.')"
+        />
+        <img
+          src="img/gallery/Geoffrey Hinton.jpg"
+          alt="Geoffrey Hinton"
+          onclick="showModal('Geoffrey Hinton', 'Pelopor dalam deep learning dan jaringan saraf tiruan.')"
+        />
+      </div>
+    </section>
+    <!-- end gallery -->
+
+    <!-- articles -->
+    <section id="articles">
+      <h2>Articles</h2>
+      <div class="article-item">
+        <article>
+          <h3>E-sport</h3>
+          <img src="img/articles/e-sport.jpg" alt="E-sport" />
+          <p>
+            E-sport adalah kompetisi permainan video yang berkembang pesat dan
+            menjadi industri besar dengan basis penggemar global.
+            <a
+              href="https://blog.maukuliah.id/pengertian-e-sport/"
+              target="_blank"
+              >Baca selengkapnya</a
+            >
+          </p>
+        </article>
+
+        <article>
+          <h3>Blockchain</h3>
+          <img src="img/articles/blockchain.jpg" alt="Blockchain" />
+          <p>
+            Blockchain adalah teknologi revolusioner yang digunakan dalam
+            cryptocurrency dan berbagai aplikasi lainnya.
+            <a
+              href="https://bif.telkomuniversity.ac.id/apa-itu-blockchain-mengungkap-teknologi-revolusioner-di-era-digital/"
+              target="_blank"
+              >Baca selengkapnya</a
+            >
+          </p>
+        </article>
+
+        <article>
+          <h3>Cyber Security</h3>
+          <img src="img/articles/cyber security.jpeg" alt="Cyber Security" />
+          <p>
+            Cyber security melindungi sistem, jaringan, dan data dari berbagai
+            ancaman digital.
+            <a
+              href="https://www.dicoding.com/blog/cyber-security-pengertian-jenis-dan-ancamannya/"
+              target="_blank"
+              >Baca selengkapnya</a
+            >
+          </p>
+        </article>
+
+        <article>
+          <h3>Kecerdasan Buatan (AI)</h3>
+          <img src="img/articles/ai.png" alt="Artificial Intelligence" />
+          <p>
+            AI semakin banyak digunakan dalam berbagai aspek kehidupan, mulai
+            dari asisten virtual hingga kendaraan otonom.
+            <a
+              href="https://portalpublikasi.id/2023/05/13/perkembangan-teknologi-kecerdasan-buatan-artificial-intelligence-atau-ai/"
+              target="_blank"
+              >Baca selengkapnya</a
+            >
+          </p>
+        </article>
+
+        <article>
+          <h3>Universitas Sam Ratulangi</h3>
+          <img src="img/articles/unsrat.jpg" alt="Universitas Sam Ratulangi" />
+          <p>
+            Universitas Sam Ratulangi (Unsrat) adalah salah satu perguruan
+            tinggi terbaik di Indonesia Timur.
+            <a
+              href="https://www.unsrat.ac.id/profil-unversitas/"
+              target="_blank"
+              >Baca selengkapnya</a
+            >
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- unutk menampilkan deskripsi dari image -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-text"></p>
+      </div>
+    </div>
+    <!-- end articles -->
+
+    <!-- contact -->
+    <section id="contact">
+      <h2>Contact <span>Me</span></h2>
+      <div class="contact main-container">
+        <div class="contact-left"></div>
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/meoajpkz"
+          method="POST"
+        >
+          <div>
+            <input type="text" placeholder="name" name="name" />
+          </div>
+          <div>
+            <input type="email" placeholder="email" name="email" />
+          </div>
+          <div>
+            <textarea
+              name="message"
+              placeholder="message"
+              id="message"
+              cols="50"
+              rows="10"
+            ></textarea>
+          </div>
+          <div>
+            <button class="btn-submit">Kirim pesan</button>
+          </div>
+        </form>
+
+        <div class="contact-right">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M17.707 12.293a.999.999 0 0 0-1.414 0l-1.594 1.594c-.739-.22-2.118-.72-2.992-1.594s-1.374-2.253-1.594-2.992l1.594-1.594a.999.999 0 0 0 0-1.414l-4-4a.999.999 0 0 0-1.414 0L3.581 5.005c-.38.38-.594.902-.586 1.435.023 1.424.4 6.37 4.298 10.268s8.844 4.274 10.269 4.298h.028c.528 0 1.027-.208 1.405-.586l2.712-2.712a.999.999 0 0 0 0-1.414l-4-4.001zm-.127 6.712c-1.248-.021-5.518-.356-8.873-3.712-3.366-3.366-3.692-7.651-3.712-8.874L7 4.414 9.586 7 8.293 8.293a1 1 0 0 0-.272.912c.024.115.611 2.842 2.271 4.502s4.387 2.247 4.502 2.271a.991.991 0 0 0 .912-.271L17 14.414 19.586 17l-2.006 2.005z"
+                ></path>
+              </svg>
+            </div>
+            <div class="contact-item-text">
+              <h4>Phone</h4>
+              <p>(+62) 822 5917 8622</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20 4H4c-1.103 0-2 .897-2 2v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2zm0 2v.511l-8 6.223-8-6.222V6h16zM4 18V9.044l7.386 5.745a.994.994 0 0 0 1.228 0L20 9.044 20.002 18H4z"
+                ></path>
+              </svg>
+            </div>
+            <div class="contact-item-text">
+              <h4>Email</h4>
+              <p>ralfybriggithbawinto@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <circle cx="12" cy="12" r="4"></circle>
+                <path
+                  d="M13 4.069V2h-2v2.069A8.01 8.01 0 0 0 4.069 11H2v2h2.069A8.008 8.008 0 0 0 11 19.931V22h2v-2.069A8.007 8.007 0 0 0 19.931 13H22v-2h-2.069A8.008 8.008 0 0 0 13 4.069zM12 18c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6z"
+                ></path>
+              </svg>
+            </div>
+            <div class="contact-item-text">
+              <h4>Location</h4>
+              <p>Manado, Sulawesi Utara</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end contact -->
+
+    <!-- footer -->
+    <footer>
+      <div class="footer-icons">
+        <a href="https://www.instagram.com/briggithbawinto_" target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+            />
+          </svg>
+        </a>
+        <a href="https://www.facebook.com/BawintoRalfy" target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"
+            />
+          </svg>
+        </a>
+        <a href="https://www.youtube.com/@briggithbawinto9594" target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"
+            />
+          </svg>
+        </a>
+        <a href="https://www.github.com/RalfyBawinto" target="_blank">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"
+            />
+          </svg>
+        </a>
+      </div>
+      <p>&copy; 2025 Ralfy Bawinto</p>
+    </footer>
+    <!-- end footer -->
+  </body>
+</html>
