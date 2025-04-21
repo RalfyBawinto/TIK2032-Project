@@ -6,60 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalText = document.getElementById("modal-text");
   const closeModalButton = document.querySelector(".close");
   const revealElements = document.querySelectorAll(".reveal-on-scroll");
-  const contactForm = document.querySelector("#contact-form");
 
-  let formChanged = false;
+  // ✅ Flag untuk deteksi nav menu click
+  let isNavClick = false;
 
-  // ✅ Tangani perubahan form: hanya tandai form berubah jika ada input
-  if (contactForm) {
-    const inputs = contactForm.querySelectorAll("input, textarea");
-    inputs.forEach((input) => {
-      input.addEventListener("input", () => {
-        formChanged = Array.from(inputs).some(
-          (el) => el.value.trim().length > 0
-        );
-      });
-    });
-
-    // ✅ Tangani pengiriman form
-    contactForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(contactForm);
-
-      try {
-        const response = await fetch("https://formspree.io/f/meoajpkz", {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json",
-          },
-        });
-
-        if (response.ok) {
-          contactForm.reset();
-          formChanged = false;
-          showModal("Thank You!", "Your message has been sent successfully.");
-        } else {
-          showModal("Oops!", "There was a problem sending your message.");
-        }
-      } catch (error) {
-        showModal("Error", "Something went wrong. Please try again later.");
-      }
-    });
-  }
-
-  // ❗ Tampilkan peringatan hanya jika form benar-benar diubah
-  window.addEventListener("beforeunload", (e) => {
-    if (formChanged) {
-      const msg = "You have unsaved changes in the contact form. Leave anyway?";
-      e.preventDefault();
-      e.returnValue = msg;
-      return msg;
-    }
-  });
-
-  // 🚀 Navigasi instan tanpa scroll animasi
+  // ✅ Nav menu click: No smooth scroll & skip reveal anim
   document.querySelectorAll(".main-header nav ul li a").forEach((link) => {
     link.addEventListener("click", (e) => {
       const targetId = link.getAttribute("href");
@@ -68,20 +19,15 @@ document.addEventListener("DOMContentLoaded", () => {
       if (targetEl) {
         e.preventDefault();
 
+        isNavClick = true; // ➕ tandai ini klik nav
+
         document.documentElement.style.scrollBehavior = "auto";
         targetEl.scrollIntoView({ behavior: "auto" });
 
         setTimeout(() => {
+          isNavClick = false; // 🔁 reset flag
           document.documentElement.style.scrollBehavior = "smooth";
-          revealElements.forEach((el) => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight && rect.bottom > 0) {
-              el.classList.add("visible");
-            } else {
-              el.classList.remove("visible");
-            }
-          });
-        }, 50);
+        }, 300);
       }
 
       navMenu.classList.remove("active");
@@ -89,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 🍔 Toggle burger menu
+  // 🍔 Burger menu toggle
   if (burger && navMenu) {
     burger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
@@ -97,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 💬 Modal logic
+  // 🧼 Modal logic
   window.showModal = (title, text) => {
     if (modal && modalTitle && modalText) {
       modalTitle.textContent = title;
@@ -118,15 +64,14 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) closeModal();
   });
 
-  // 👁️ Reveal saat scroll (berulang)
+  // 👁️ Scroll reveal
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
+          // ✅ Cek apakah bukan dari nav menu
+          if (!isNavClick && entry.isIntersecting) {
             entry.target.classList.add("visible");
-          } else {
-            entry.target.classList.remove("visible");
           }
         });
       },
@@ -138,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((el) => el.classList.add("visible"));
   }
 
-  // 🔁 Aktifkan smooth scroll default setelah load
+  // 🔁 Set default smooth scroll (for normal scrolls)
   setTimeout(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, 100);

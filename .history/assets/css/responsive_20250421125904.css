@@ -1,0 +1,87 @@
+@media screen and (max-width: 768px) {
+  /* ... kode sebelumnya tetap ... */
+
+  /* HAPUS height fix */
+  /* #articles {
+    height: 170vh;
+  }
+
+  #contact {
+    height: 110vh;
+  } */
+
+  /* Ganti dengan padding bawah agar tetap rapi */
+  #articles,
+  #contact {
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  /* ... kode lainnya tetap ... */
+
+  /* HAPUS height fix */
+  /* #articles {
+    height: 260vh;
+  }
+
+  #contact {
+    height: 110vh;
+  } */
+
+  #articles,
+  #contact {
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 417px) {
+  #gallery {
+    /* height: 100vh; */ /* Hapus */
+    padding-bottom: 40px;
+  }
+
+  #articles {
+    /* height: 290vh; */ /* Hapus */
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #about {
+    /* height: 130vh; */ /* Hapus */
+    padding-bottom: 60px;
+  }
+
+  #gallery {
+    /* height: 100vh; */ /* Hapus */
+    padding-bottom: 40px;
+  }
+
+  #articles {
+    /* height: 370vh; */ /* Hapus */
+    padding-bottom: 60px;
+  }
+
+  #contact {
+    /* height: 120vh; */ /* Hapus */
+    padding-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  #about {
+    /* height: 120vh; */ /* Hapus */
+    padding-bottom: 60px;
+  }
+
+  #gallery {
+    /* height: 110vh; */ /* Hapus */
+    padding-bottom: 40px;
+  }
+
+  #contact {
+    /* height: 100vh; */ /* Hapus */
+    padding-bottom: 60px;
+  }
+}

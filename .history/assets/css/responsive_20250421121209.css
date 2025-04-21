@@ -80,32 +80,6 @@
     flex-direction: column;
     text-align: center;
   }
-  .footer-icons .icon {
-    animation: bounce 1s ease-in-out infinite;
-  }
-
-  .footer-icons .icon:nth-child(1) {
-    animation-delay: 0s;
-  }
-
-  .footer-icons .icon:nth-child(2) {
-    animation-delay: 0.2s;
-  }
-
-  .footer-icons .icon:nth-child(3) {
-    animation-delay: 0.4s;
-  }
-
-  .footer-icons .icon:nth-child(4) {
-    animation-delay: 0.6s;
-  }
-}
-
-/* Di luar responsive, nonaktifkan animasinya */
-@media screen and (min-width: 769px) {
-  .footer-icons .icon {
-    animation: none !important;
-  }
 }
 
 @media screen and (max-width: 480px) {
@@ -249,9 +223,9 @@
     height: 110vh;
   }
 
-  #articles {
-    height: 320vh;
-  }
+  /* #articles {
+    height: 300vh;
+  } */
 
   #contact {
     height: 100vh;

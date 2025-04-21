@@ -8,20 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const revealElements = document.querySelectorAll(".reveal-on-scroll");
   const contactForm = document.querySelector("#contact-form");
 
-  let formChanged = false;
+  let formChanged = false; // Flag untuk mendeteksi perubahan pada form
 
-  // ✅ Tangani perubahan form: hanya tandai form berubah jika ada input
+  // Menangani perubahan form
   if (contactForm) {
-    const inputs = contactForm.querySelectorAll("input, textarea");
-    inputs.forEach((input) => {
-      input.addEventListener("input", () => {
-        formChanged = Array.from(inputs).some(
-          (el) => el.value.trim().length > 0
-        );
-      });
+    // Event listener untuk mendeteksi perubahan input pada form
+    contactForm.addEventListener("input", () => {
+      formChanged = true; // Tandai form telah diubah
     });
 
-    // ✅ Tangani pengiriman form
+    // Event listener untuk menangani pengiriman form
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -37,8 +33,8 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         if (response.ok) {
-          contactForm.reset();
-          formChanged = false;
+          contactForm.reset(); // Reset form setelah berhasil kirim
+          formChanged = false; // Reset flag form berubah
           showModal("Thank You!", "Your message has been sent successfully.");
         } else {
           showModal("Oops!", "There was a problem sending your message.");
@@ -49,17 +45,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ❗ Tampilkan peringatan hanya jika form benar-benar diubah
+  // Peringatan jika pengguna ingin me-refresh halaman dengan form yang belum dikirim
   window.addEventListener("beforeunload", (e) => {
     if (formChanged) {
-      const msg = "You have unsaved changes in the contact form. Leave anyway?";
-      e.preventDefault();
-      e.returnValue = msg;
-      return msg;
+      const confirmationMessage =
+        "You have unsaved changes in the contact form. Are you sure you want to leave?";
+      (e || window.event).returnValue = confirmationMessage; // Untuk browser lama
+      return confirmationMessage; // Untuk browser modern
     }
   });
 
-  // 🚀 Navigasi instan tanpa scroll animasi
+  // ✅ Nav menu click (instant scroll + observer trigger)
   document.querySelectorAll(".main-header nav ul li a").forEach((link) => {
     link.addEventListener("click", (e) => {
       const targetId = link.getAttribute("href");
@@ -71,8 +67,11 @@ document.addEventListener("DOMContentLoaded", () => {
         document.documentElement.style.scrollBehavior = "auto";
         targetEl.scrollIntoView({ behavior: "auto" });
 
+        // 🧠 Trigger observer again after scrolling
         setTimeout(() => {
           document.documentElement.style.scrollBehavior = "smooth";
+
+          // 👇 Manual trigger visibility check
           revealElements.forEach((el) => {
             const rect = el.getBoundingClientRect();
             if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -89,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 🍔 Toggle burger menu
+  // 🍔 Burger toggle
   if (burger && navMenu) {
     burger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
@@ -97,7 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 💬 Modal logic
+  // 🧼 Modal logic
   window.showModal = (title, text) => {
     if (modal && modalTitle && modalText) {
       modalTitle.textContent = title;
@@ -118,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) closeModal();
   });
 
-  // 👁️ Reveal saat scroll (berulang)
+  // 👁️ Scroll reveal (berulang-ulang, bukan sekali saja)
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -138,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((el) => el.classList.add("visible"));
   }
 
-  // 🔁 Aktifkan smooth scroll default setelah load
+  // Default: smooth scroll aktif untuk scroll biasa
   setTimeout(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, 100);
