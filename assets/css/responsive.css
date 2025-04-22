@@ -52,9 +52,9 @@
     padding: 10px 0;
   }
 
-  #articles {
+  /* #articles {
     height: 170vh;
-  }
+  } */
 
   #contact {
     height: 110vh;
@@ -148,9 +148,9 @@
     font-size: 0.8rem;
   }
 
-  #articles {
+  /* #articles {
     height: 260vh;
-  }
+  } */
 
   #contact {
     height: 110vh;
@@ -162,9 +162,9 @@
     height: 100vh;
   }
 
-  #articles {
+  /* #articles {
     height: 290vh;
-  }
+  } */
 }
 
 @media screen and (max-width: 360px) {
@@ -198,9 +198,9 @@
     height: 100vh;
   }
 
-  #articles {
+  /* #articles {
     height: 370vh;
-  }
+  } */
 
   #contact {
     height: 120vh;
@@ -249,9 +249,9 @@
     height: 110vh;
   }
 
-  #articles {
+  /* #articles {
     height: 320vh;
-  }
+  } */
 
   #contact {
     height: 100vh;

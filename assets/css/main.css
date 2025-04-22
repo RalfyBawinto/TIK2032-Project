@@ -500,7 +500,6 @@ nav ul li a:hover {
 
 /* articles */
 #articles {
-  height: 120vh;
   padding: 80px 20px;
   background: linear-gradient(135deg, #0d0d0e, #2a5298);
   color: white;
@@ -546,7 +545,7 @@ nav ul li a:hover {
   font-size: 1.7rem;
   color: #fbfafa;
   margin-bottom: 15px;
-  color: #1973e17f;
+  color: #0073ff8d;
 }
 
 .article-item p {
@@ -566,7 +565,7 @@ nav ul li a:hover {
 }
 
 .article-item a:hover {
-  color: #1973e1;
+  color: #0073ff;
   text-decoration: underline;
 }
 /* end articles */
