@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let formChanged = false;
 
-  // ✅ Tangani perubahan form: hanya tandai form berubah jika ada input
+  // Tangani perubahan form: hanya tandai form berubah jika ada input
   if (contactForm) {
     const inputs = contactForm.querySelectorAll("input, textarea");
     inputs.forEach((input) => {
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // ✅ Tangani pengiriman form
+    // Tangani pengiriman form
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // ❗ Tampilkan peringatan hanya jika form benar-benar diubah
+  // Tampilkan peringatan hanya jika form benar-benar diubah
   window.addEventListener("beforeunload", (e) => {
     if (formChanged) {
       const msg = "You have unsaved changes in the contact form. Leave anyway?";
@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // 🚀 Navigasi instan tanpa scroll animasi
+  // Navigasi instan tanpa scroll animasi
   document.querySelectorAll(".main-header nav ul li a").forEach((link) => {
     link.addEventListener("click", (e) => {
       const targetId = link.getAttribute("href");
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 🍔 Toggle burger menu
+  // Toggle burger menu
   if (burger && navMenu) {
     burger.addEventListener("click", () => {
       navMenu.classList.toggle("active");
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 💬 Modal logic
+  // Modal logic
   window.showModal = (title, text) => {
     if (modal && modalTitle && modalText) {
       modalTitle.textContent = title;
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === modal) closeModal();
   });
 
-  // 👁️ Reveal saat scroll (berulang)
+  // Reveal saat scroll (berulang)
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((el) => el.classList.add("visible"));
   }
 
-  // 🔁 Aktifkan smooth scroll default setelah load
+  // Aktifkan smooth scroll default setelah load
   setTimeout(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, 100);
