@@ -1,7 +1,17 @@
+@media screen and (max-width: 1080px) {
+  .typing-text {
+    font-size: 6rem;
+  }
+
+  .home-text p {
+    font-size: 1rem;
+  }
+}
+
 @media screen and (max-width: 768px) {
   #home {
     display: flex;
-    flex-direction: column-reverse; /* Memindahkan gambar ke atas, teks ke bawah */
+    flex-direction: column-reverse;
     align-items: center;
     text-align: center;
     gap: 10px;
@@ -14,6 +24,7 @@
   .home-text {
     width: 90%;
     padding: 10px;
+    text-align: center;
   }
 
   .home-img {
@@ -24,40 +35,46 @@
   }
 
   .home-img .img-box {
-    width: 200px; /* Ukuran gambar lebih besar */
+    width: 200px;
     height: 200px;
   }
 
   .home-text h1 {
-    font-size: 2rem;
+    font-size: 1rem;
   }
 
   .typing-text {
-    font-size: 5rem;
-  }
-
-  .home-text p {
-    font-size: 1rem;
+    font-size: 4rem;
   }
 
   .main-header nav ul {
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Di bawah header */
+    top: 60px;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.3);
     padding: 20px 0;
     text-align: center;
+    z-index: 999;
   }
 
   .main-header nav ul li {
     padding: 10px 0;
   }
 
+  /* Menu muncul ketika burger diklik */
+  .nav.active ul {
+    display: flex;
+  }
+
+  /* Tampilkan burger di layar kecil */
+  .burger {
+    display: flex;
+  }
+
   #contact {
-    height: 110vh;
+    height: auto;
   }
 
   .contact {
@@ -65,14 +82,8 @@
     padding: 20px;
   }
 
-  /* Menu muncul ketika burger diklik */
-  .nav ul.active {
-    display: flex;
-  }
-
-  /* Tampilkan burger di layar kecil */
-  .burger {
-    display: flex;
+  .gallery-item {
+    grid-template-columns: 1fr;
   }
 
   .footer-icons .icon {
@@ -98,19 +109,12 @@
 
 @media screen and (max-width: 480px) {
   #home {
-    display: flex;
     flex-direction: column-reverse;
-    align-items: center;
-    text-align: center;
-    gap: 10px; /* Mengurangi jarak antara gambar dan teks */
+    gap: 10px;
   }
 
   .home-img {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 20px; /* Mengurangi jarak bawah gambar */
+    margin-bottom: 20px;
   }
 
   .home-img .img-box {
@@ -121,29 +125,27 @@
   .home-text {
     width: 90%;
     padding: 10px;
-    margin-top: -10px; /* Mengurangi jarak atas teks */
-  }
-
-  .home-text h1 {
-    font-size: 1.3rem;
+    margin-top: -10px;
   }
 
   .typing-text {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .home-text p {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  #about {
+    height: auto;
   }
 
   #contact {
-    height: 110vh;
+    height: auto;
   }
-}
 
-@media screen and (max-width: 417px) {
-  #gallery {
-    height: 100vh;
+  .gallery-item {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -151,35 +153,22 @@
   .home-img .img-box {
     width: 140px;
     height: 140px;
-    position: center;
   }
 
-  .home-text {
-    padding: 10px;
-  }
-
-  .home-text h1 {
-    font-size: 1.1rem;
-  }
-
-  .typing-text {
-    padding: 10px;
-  }
-
-  .home-text p {
-    font-size: 0.8rem;
-  }
+  /* #home {
+    height: 100vh;
+  } */
 
   #about {
-    height: 130vh;
+    height: auto;
   }
 
   #gallery {
-    height: 100vh;
+    height: auto;
   }
 
   #contact {
-    height: 120vh;
+    height: auto;
   }
 
   .img-box {
@@ -196,7 +185,7 @@
   }
 
   .home-img {
-    margin-bottom: 10px; /* Mengurangi jarak bawah gambar */
+    margin-bottom: 10px;
   }
 
   .home-img .img-box {
@@ -206,32 +195,15 @@
 
   .home-text {
     padding: 10px;
-    margin-top: -10px; /* Mengurangi jarak antara teks dan gambar */
+    margin-top: -10px;
   }
 
-  .home-text h1 {
-    font-size: 1rem;
-  }
-
-  .home-text p {
-    font-size: 0.75rem;
-  }
-
-  #about {
-    height: 120vh;
-  }
-
-  #gallery {
-    height: 110vh;
-  }
-
-  #contact {
-    height: 100vh;
-  }
+  /* #about{
+    height: auto;
+  } */
 }
 
-/* mengatur ulang layout saat layar besar */
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 1081px) {
   #home {
     display: flex;
     flex-direction: row;
@@ -244,7 +216,6 @@
   .home-text {
     width: auto;
     padding: 0;
-    text-align: left;
   }
 
   .home-img {
@@ -259,12 +230,8 @@
     height: 20vw;
   }
 
-  .home-text h1 {
-    font-size: 3rem;
-  }
-
   .typing-text {
-    font-size: 10rem;
+    font-size: 8.6rem;
   }
 
   .home-text p {
@@ -285,6 +252,10 @@
   .contact {
     flex-direction: row;
     padding: 40px;
+  }
+
+  .gallery-item {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .footer-icons .icon {
