@@ -75,11 +75,6 @@
     display: flex;
   }
 
-  /* Penyesuaian tampilan teks dan gambar */
-  .home-text {
-    flex-direction: column;
-    text-align: center;
-  }
   .footer-icons .icon {
     animation: bounce 1s ease-in-out infinite;
   }
@@ -98,13 +93,6 @@
 
   .footer-icons .icon:nth-child(4) {
     animation-delay: 0.6s;
-  }
-}
-
-/* Di luar responsive, nonaktifkan animasinya */
-@media screen and (min-width: 769px) {
-  .footer-icons .icon {
-    animation: none !important;
   }
 }
 
@@ -239,5 +227,67 @@
 
   #contact {
     height: 100vh;
+  }
+}
+
+/* mengatur ulang layout saat layar besar */
+@media screen and (min-width: 769px) {
+  #home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 100px;
+  }
+
+  .home-text {
+    width: auto;
+    padding: 0;
+    text-align: left;
+  }
+
+  .home-img {
+    width: auto;
+    margin-bottom: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-img .img-box {
+    width: 20vw;
+    height: 20vw;
+  }
+
+  .home-text h1 {
+    font-size: 3rem;
+  }
+
+  .typing-text {
+    font-size: 10rem;
+  }
+
+  .home-text p {
+    font-size: 1.2rem;
+  }
+
+  .main-header nav ul {
+    display: flex !important;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+
+  .burger {
+    display: none !important;
+  }
+
+  .contact {
+    flex-direction: row;
+    padding: 40px;
+  }
+
+  .footer-icons .icon {
+    animation: none !important;
   }
 }
