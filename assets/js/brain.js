@@ -8,12 +8,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeModalButton = document.querySelector(".close");
   const revealElements = document.querySelectorAll(".reveal-on-scroll");
   const contactForm = document.querySelector("#contact-form");
+  const rocketLoader = document.getElementById("rocket-loader");
+  const sendingText = document.getElementById("sending-text");
 
   let formChanged = false;
 
   // === FORM HANDLING ===
   if (contactForm) {
     const inputs = contactForm.querySelectorAll("input, textarea");
+    const spinnerLoader = document.getElementById("spinner-loader");
+
     inputs.forEach((input) => {
       input.addEventListener("input", () => {
         formChanged = Array.from(inputs).some(
@@ -25,6 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       const formData = new FormData(contactForm);
+
+      // Show spinner
+      if (spinnerLoader) spinnerLoader.style.display = "flex";
 
       try {
         const response = await fetch("https://formspree.io/f/meoajpkz", {
@@ -38,12 +45,18 @@ document.addEventListener("DOMContentLoaded", () => {
         if (response.ok) {
           contactForm.reset();
           formChanged = false;
-          showModal("Thank You!", "Your message has been sent successfully.");
+
+          setTimeout(() => {
+            if (spinnerLoader) spinnerLoader.style.display = "none";
+            showModal("Thank You!", "Your message has been sent successfully.");
+          }, 800);
         } else {
           showModal("Oops!", "There was a problem sending your message.");
+          if (spinnerLoader) spinnerLoader.style.display = "none";
         }
       } catch (error) {
         showModal("Error", "Something went wrong. Please try again later.");
+        if (spinnerLoader) spinnerLoader.style.display = "none";
       }
     });
   }
@@ -150,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((el) => el.classList.add("visible"));
   }
 
-  // === MENU ACTIVE ON SCROLL (UNTUK SEMUA TAMPILAN) ===
+  // === MENU ACTIVE ON SCROLL ===
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".main-header nav ul li a");
 
@@ -172,10 +185,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // === AKTIFKAN SMOOTH SCROLL DEFAULT ===
+  // === SMOOTH SCROLL DEFAULT ===
   setTimeout(() => {
     document.documentElement.style.scrollBehavior = "smooth";
   }, 100);
 });
-
-// tambahkan logika dimana pada menu navbar dia akan memberikan kode dimana ketika kita berada pada halaman home di menu nya home akan hover sendiri dan begitu juga pada halaman atau section yang berbeda dan hanya berlaku pada tampilan default layout tidak di tampilan reposnsive
