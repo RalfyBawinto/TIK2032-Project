@@ -131,6 +131,15 @@
         />
       </div>
     </section>
+
+    <!-- unutk menampilkan deskripsi dari image -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h3 id="modal-title"></h3>
+        <p id="modal-text"></p>
+      </div>
+    </div>
     <!-- end gallery -->
 
     <!-- articles -->
@@ -176,7 +185,7 @@
         <article>
           <h3>Cyber Security</h3>
           <img
-            src="assets/img/articles/cyber security.jpeg"
+            src="assets/img/articles/cyber-security.jpeg"
             loading="lazy"
             alt="Cyber Security"
           />
@@ -192,7 +201,7 @@
         </article>
 
         <article>
-          <h3>Kecerdasan Buatan (AI)</h3>
+          <h3>Kecerdasan Buatan</h3>
           <img
             src="assets/img/articles/ai.png"
             loading="lazy"
@@ -210,7 +219,7 @@
         </article>
 
         <article>
-          <h3>Universitas Sam Ratulangi</h3>
+          <h3>Unsrat</h3>
           <img
             src="assets/img/articles/unsrat.jpg"
             loading="lazy"
@@ -228,15 +237,6 @@
         </article>
       </div>
     </section>
-
-    <!-- unutk menampilkan deskripsi dari image -->
-    <div id="modal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeModal()">&times;</span>
-        <h3 id="modal-title"></h3>
-        <p id="modal-text"></p>
-      </div>
-    </div>
     <!-- end articles -->
 
     <!-- contact -->
@@ -274,7 +274,7 @@
           <div>
             <button class="btn-submit">Send message</button>
           </div>
-          <!-- Roket -->
+          <!-- Loading Animation -->
           <div id="spinner-loader" class="spinner-loader">
             <div class="spinner"></div>
             <div class="sending-text">Sending...</div>
